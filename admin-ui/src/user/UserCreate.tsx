@@ -30,7 +30,7 @@ export const UserCreate = (props: CreateProps): React.ReactElement => {
         <ReferenceInput
           source="scanhistory.id"
           reference="ScanHistory"
-          label="ScanHistory"
+          label="scanHistory"
         >
           <SelectInput optionText={ScanHistoryTitle} />
         </ReferenceInput>
