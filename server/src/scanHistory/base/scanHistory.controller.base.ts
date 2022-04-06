@@ -73,25 +73,11 @@ export class ScanHistoryControllerBase {
       );
     }
     return await this.service.create({
-      data: {
-        ...data,
-
-        users: data.users
-          ? {
-              connect: data.users,
-            }
-          : undefined,
-      },
+      data: data,
       select: {
         createdAt: true,
         id: true,
         updatedAt: true,
-
-        users: {
-          select: {
-            id: true,
-          },
-        },
       },
     });
   }
@@ -128,12 +114,6 @@ export class ScanHistoryControllerBase {
         createdAt: true,
         id: true,
         updatedAt: true,
-
-        users: {
-          select: {
-            id: true,
-          },
-        },
       },
     });
     return results.map((result) => permission.filter(result));
@@ -169,12 +149,6 @@ export class ScanHistoryControllerBase {
         createdAt: true,
         id: true,
         updatedAt: true,
-
-        users: {
-          select: {
-            id: true,
-          },
-        },
       },
     });
     if (result === null) {
@@ -226,25 +200,11 @@ export class ScanHistoryControllerBase {
     try {
       return await this.service.update({
         where: params,
-        data: {
-          ...data,
-
-          users: data.users
-            ? {
-                connect: data.users,
-              }
-            : undefined,
-        },
+        data: data,
         select: {
           createdAt: true,
           id: true,
           updatedAt: true,
-
-          users: {
-            select: {
-              id: true,
-            },
-          },
         },
       });
     } catch (error) {
@@ -281,12 +241,6 @@ export class ScanHistoryControllerBase {
           createdAt: true,
           id: true,
           updatedAt: true,
-
-          users: {
-            select: {
-              id: true,
-            },
-          },
         },
       });
     } catch (error) {
@@ -326,11 +280,10 @@ export class ScanHistoryControllerBase {
     const results = await this.service.findProducts(params.id, {
       ...query,
       select: {
+        barcode: true,
         createdAt: true,
-        description: true,
         id: true,
-        itemPrice: true,
-        name: true,
+        productName: true,
         updatedAt: true,
       },
     });

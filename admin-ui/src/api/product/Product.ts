@@ -1,11 +1,10 @@
 import { ScanHistory } from "../scanHistory/ScanHistory";
 
 export type Product = {
+  barcode: number | null;
   createdAt: Date;
-  description: string | null;
   id: string;
-  itemPrice: number | null;
-  name: string | null;
+  productName: string | null;
   scanHistory?: Array<ScanHistory>;
   updatedAt: Date;
 };

@@ -11,37 +11,21 @@ https://docs.amplication.com/docs/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import {
-  IsString,
-  IsOptional,
-  IsNumber,
-  ValidateNested,
-} from "class-validator";
+import { IsInt, IsOptional, IsString, ValidateNested } from "class-validator";
 import { ScanHistoryCreateNestedManyWithoutProductsInput } from "./ScanHistoryCreateNestedManyWithoutProductsInput";
 import { Type } from "class-transformer";
 @InputType()
 class ProductCreateInput {
   @ApiProperty({
     required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  description?: string | null;
-
-  @ApiProperty({
-    required: false,
     type: Number,
   })
-  @IsNumber()
+  @IsInt()
   @IsOptional()
   @Field(() => Number, {
     nullable: true,
   })
-  itemPrice?: number | null;
+  barcode?: number | null;
 
   @ApiProperty({
     required: false,
@@ -52,7 +36,7 @@ class ProductCreateInput {
   @Field(() => String, {
     nullable: true,
   })
-  name?: string | null;
+  productName?: string | null;
 
   @ApiProperty({
     required: false,

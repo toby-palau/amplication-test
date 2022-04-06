@@ -10,7 +10,7 @@ https://docs.amplication.com/docs/how-to/custom-code
 ------------------------------------------------------------------------------
   */
 import { PrismaService } from "nestjs-prisma";
-import { Prisma, ScanHistory, Product, User } from "@prisma/client";
+import { Prisma, ScanHistory, Product } from "@prisma/client";
 
 export class ScanHistoryServiceBase {
   constructor(protected readonly prisma: PrismaService) {}
@@ -56,13 +56,5 @@ export class ScanHistoryServiceBase {
         where: { id: parentId },
       })
       .products(args);
-  }
-
-  async getUsers(parentId: string): Promise<User | null> {
-    return this.prisma.scanHistory
-      .findUnique({
-        where: { id: parentId },
-      })
-      .users();
   }
 }

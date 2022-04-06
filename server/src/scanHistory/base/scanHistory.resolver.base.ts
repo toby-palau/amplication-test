@@ -27,7 +27,6 @@ import { ScanHistoryFindUniqueArgs } from "./ScanHistoryFindUniqueArgs";
 import { ScanHistory } from "./ScanHistory";
 import { ProductFindManyArgs } from "../../product/base/ProductFindManyArgs";
 import { Product } from "../../product/base/Product";
-import { User } from "../../user/base/User";
 import { ScanHistoryService } from "../scanHistory.service";
 
 @graphql.Resolver(() => ScanHistory)
@@ -134,15 +133,7 @@ export class ScanHistoryResolverBase {
     // @ts-ignore
     return await this.service.create({
       ...args,
-      data: {
-        ...args.data,
-
-        users: args.data.users
-          ? {
-              connect: args.data.users,
-            }
-          : undefined,
-      },
+      data: args.data,
     });
   }
 
@@ -181,15 +172,7 @@ export class ScanHistoryResolverBase {
       // @ts-ignore
       return await this.service.update({
         ...args,
-        data: {
-          ...args.data,
-
-          users: args.data.users
-            ? {
-                connect: args.data.users,
-              }
-            : undefined,
-        },
+        data: args.data,
       });
     } catch (error) {
       if (isRecordNotFoundError(error)) {
@@ -247,29 +230,5 @@ export class ScanHistoryResolverBase {
     }
 
     return results.map((result) => permission.filter(result));
-  }
-
-  @graphql.ResolveField(() => User, { nullable: true })
-  @nestAccessControl.UseRoles({
-    resource: "ScanHistory",
-    action: "read",
-    possession: "any",
-  })
-  async users(
-    @graphql.Parent() parent: ScanHistory,
-    @gqlUserRoles.UserRoles() userRoles: string[]
-  ): Promise<User | null> {
-    const permission = this.rolesBuilder.permission({
-      role: userRoles,
-      action: "read",
-      possession: "any",
-      resource: "User",
-    });
-    const result = await this.service.getUsers(parent.id);
-
-    if (!result) {
-      return null;
-    }
-    return permission.filter(result);
   }
 }

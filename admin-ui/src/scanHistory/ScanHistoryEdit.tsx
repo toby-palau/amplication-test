@@ -1,17 +1,12 @@
 import * as React from "react";
-
 import {
   Edit,
   SimpleForm,
   EditProps,
   ReferenceArrayInput,
   SelectArrayInput,
-  ReferenceInput,
-  SelectInput,
 } from "react-admin";
-
 import { ProductTitle } from "../product/ProductTitle";
-import { UserTitle } from "../user/UserTitle";
 
 export const ScanHistoryEdit = (props: EditProps): React.ReactElement => {
   return (
@@ -25,9 +20,6 @@ export const ScanHistoryEdit = (props: EditProps): React.ReactElement => {
         >
           <SelectArrayInput optionText={ProductTitle} />
         </ReferenceArrayInput>
-        <ReferenceInput source="user.id" reference="User" label="Users">
-          <SelectInput optionText={UserTitle} />
-        </ReferenceInput>
       </SimpleForm>
     </Edit>
   );

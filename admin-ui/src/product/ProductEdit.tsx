@@ -4,8 +4,8 @@ import {
   Edit,
   SimpleForm,
   EditProps,
-  TextInput,
   NumberInput,
+  TextInput,
   ReferenceArrayInput,
   SelectArrayInput,
 } from "react-admin";
@@ -16,9 +16,8 @@ export const ProductEdit = (props: EditProps): React.ReactElement => {
   return (
     <Edit {...props}>
       <SimpleForm>
-        <TextInput label="Description" multiline source="description" />
-        <NumberInput label="Item Price" source="itemPrice" />
-        <TextInput label="Name" source="name" />
+        <NumberInput step={1} label="Barcode" source="barcode" />
+        <TextInput label="Product Name" source="productName" />
         <ReferenceArrayInput
           source="scanHistory"
           reference="ScanHistory"
