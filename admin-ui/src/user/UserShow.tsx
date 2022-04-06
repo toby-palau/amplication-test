@@ -19,7 +19,7 @@ export const UserShow = (props: ShowProps): React.ReactElement => {
         <TextField label="Last Name" source="lastName" />
         <TextField label="Roles" source="roles" />
         <ReferenceField
-          label="ScanHistory"
+          label="scanHistory"
           source="scanhistory.id"
           reference="ScanHistory"
         >
