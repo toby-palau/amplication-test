@@ -11,37 +11,33 @@ import { ProductService } from "../product.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  barcode: 42,
   createdAt: new Date(),
-  description: "exampleDescription",
   id: "exampleId",
-  itemPrice: 42.42,
-  name: "exampleName",
+  productName: "exampleProductName",
   updatedAt: new Date(),
 };
 const CREATE_RESULT = {
+  barcode: 42,
   createdAt: new Date(),
-  description: "exampleDescription",
   id: "exampleId",
-  itemPrice: 42.42,
-  name: "exampleName",
+  productName: "exampleProductName",
   updatedAt: new Date(),
 };
 const FIND_MANY_RESULT = [
   {
+    barcode: 42,
     createdAt: new Date(),
-    description: "exampleDescription",
     id: "exampleId",
-    itemPrice: 42.42,
-    name: "exampleName",
+    productName: "exampleProductName",
     updatedAt: new Date(),
   },
 ];
 const FIND_ONE_RESULT = {
+  barcode: 42,
   createdAt: new Date(),
-  description: "exampleDescription",
   id: "exampleId",
-  itemPrice: 42.42,
-  name: "exampleName",
+  productName: "exampleProductName",
   updatedAt: new Date(),
 };
 

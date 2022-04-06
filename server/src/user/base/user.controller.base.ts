@@ -70,28 +70,13 @@ export class UserControllerBase {
       );
     }
     return await this.service.create({
-      data: {
-        ...data,
-
-        scanHistory: data.scanHistory
-          ? {
-              connect: data.scanHistory,
-            }
-          : undefined,
-      },
+      data: data,
       select: {
         createdAt: true,
         firstName: true,
         id: true,
         lastName: true,
         roles: true,
-
-        scanHistory: {
-          select: {
-            id: true,
-          },
-        },
-
         updatedAt: true,
         username: true,
       },
@@ -132,13 +117,6 @@ export class UserControllerBase {
         id: true,
         lastName: true,
         roles: true,
-
-        scanHistory: {
-          select: {
-            id: true,
-          },
-        },
-
         updatedAt: true,
         username: true,
       },
@@ -178,13 +156,6 @@ export class UserControllerBase {
         id: true,
         lastName: true,
         roles: true,
-
-        scanHistory: {
-          select: {
-            id: true,
-          },
-        },
-
         updatedAt: true,
         username: true,
       },
@@ -238,28 +209,13 @@ export class UserControllerBase {
     try {
       return await this.service.update({
         where: params,
-        data: {
-          ...data,
-
-          scanHistory: data.scanHistory
-            ? {
-                connect: data.scanHistory,
-              }
-            : undefined,
-        },
+        data: data,
         select: {
           createdAt: true,
           firstName: true,
           id: true,
           lastName: true,
           roles: true,
-
-          scanHistory: {
-            select: {
-              id: true,
-            },
-          },
-
           updatedAt: true,
           username: true,
         },
@@ -300,13 +256,6 @@ export class UserControllerBase {
           id: true,
           lastName: true,
           roles: true,
-
-          scanHistory: {
-            select: {
-              id: true,
-            },
-          },
-
           updatedAt: true,
           username: true,
         },

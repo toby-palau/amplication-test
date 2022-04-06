@@ -75,11 +75,10 @@ export class ProductControllerBase {
     return await this.service.create({
       data: data,
       select: {
+        barcode: true,
         createdAt: true,
-        description: true,
         id: true,
-        itemPrice: true,
-        name: true,
+        productName: true,
         updatedAt: true,
       },
     });
@@ -114,11 +113,10 @@ export class ProductControllerBase {
     const results = await this.service.findMany({
       ...args,
       select: {
+        barcode: true,
         createdAt: true,
-        description: true,
         id: true,
-        itemPrice: true,
-        name: true,
+        productName: true,
         updatedAt: true,
       },
     });
@@ -152,11 +150,10 @@ export class ProductControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
+        barcode: true,
         createdAt: true,
-        description: true,
         id: true,
-        itemPrice: true,
-        name: true,
+        productName: true,
         updatedAt: true,
       },
     });
@@ -211,11 +208,10 @@ export class ProductControllerBase {
         where: params,
         data: data,
         select: {
+          barcode: true,
           createdAt: true,
-          description: true,
           id: true,
-          itemPrice: true,
-          name: true,
+          productName: true,
           updatedAt: true,
         },
       });
@@ -250,11 +246,10 @@ export class ProductControllerBase {
       return await this.service.delete({
         where: params,
         select: {
+          barcode: true,
           createdAt: true,
-          description: true,
           id: true,
-          itemPrice: true,
-          name: true,
+          productName: true,
           updatedAt: true,
         },
       });
@@ -298,12 +293,6 @@ export class ProductControllerBase {
         createdAt: true,
         id: true,
         updatedAt: true,
-
-        users: {
-          select: {
-            id: true,
-          },
-        },
       },
     });
     if (results === null) {

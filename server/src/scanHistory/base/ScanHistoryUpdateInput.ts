@@ -14,7 +14,6 @@ import { ApiProperty } from "@nestjs/swagger";
 import { ProductUpdateManyWithoutScanHistoriesInput } from "./ProductUpdateManyWithoutScanHistoriesInput";
 import { ValidateNested, IsOptional } from "class-validator";
 import { Type } from "class-transformer";
-import { UserWhereUniqueInput } from "../../user/base/UserWhereUniqueInput";
 @InputType()
 class ScanHistoryUpdateInput {
   @ApiProperty({
@@ -28,17 +27,5 @@ class ScanHistoryUpdateInput {
     nullable: true,
   })
   products?: ProductUpdateManyWithoutScanHistoriesInput;
-
-  @ApiProperty({
-    required: false,
-    type: () => UserWhereUniqueInput,
-  })
-  @ValidateNested()
-  @Type(() => UserWhereUniqueInput)
-  @IsOptional()
-  @Field(() => UserWhereUniqueInput, {
-    nullable: true,
-  })
-  users?: UserWhereUniqueInput | null;
 }
 export { ScanHistoryUpdateInput };
