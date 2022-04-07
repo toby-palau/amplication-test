@@ -7,8 +7,11 @@ import {
   TextInput,
   PasswordInput,
   SelectArrayInput,
+  ReferenceInput,
+  SelectInput,
 } from "react-admin";
 
+import { ScanHistoryTitle } from "../scanHistory/ScanHistoryTitle";
 import { ROLES_OPTIONS } from "../user/RolesOptions";
 
 export const UserCreate = (props: CreateProps): React.ReactElement => {
@@ -24,6 +27,13 @@ export const UserCreate = (props: CreateProps): React.ReactElement => {
           optionText="label"
           optionValue="value"
         />
+        <ReferenceInput
+          source="scanhistory.id"
+          reference="ScanHistory"
+          label="Scan History"
+        >
+          <SelectInput optionText={ScanHistoryTitle} />
+        </ReferenceInput>
         <TextInput label="Username" source="username" />
       </SimpleForm>
     </Create>

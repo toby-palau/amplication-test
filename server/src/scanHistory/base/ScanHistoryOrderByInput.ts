@@ -44,6 +44,15 @@ class ScanHistoryOrderByInput {
     nullable: true,
   })
   updatedAt?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  usersId?: SortOrder;
 }
 
 export { ScanHistoryOrderByInput };

@@ -15,6 +15,7 @@ import { StringFilter } from "../../util/StringFilter";
 import { Type } from "class-transformer";
 import { IsOptional, ValidateNested } from "class-validator";
 import { ProductListRelationFilter } from "../../product/base/ProductListRelationFilter";
+import { UserWhereUniqueInput } from "../../user/base/UserWhereUniqueInput";
 @InputType()
 class ScanHistoryWhereInput {
   @ApiProperty({
@@ -39,5 +40,17 @@ class ScanHistoryWhereInput {
     nullable: true,
   })
   products?: ProductListRelationFilter;
+
+  @ApiProperty({
+    required: false,
+    type: () => UserWhereUniqueInput,
+  })
+  @ValidateNested()
+  @Type(() => UserWhereUniqueInput)
+  @IsOptional()
+  @Field(() => UserWhereUniqueInput, {
+    nullable: true,
+  })
+  users?: UserWhereUniqueInput;
 }
 export { ScanHistoryWhereInput };
