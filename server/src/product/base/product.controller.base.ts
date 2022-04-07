@@ -293,6 +293,12 @@ export class ProductControllerBase {
         createdAt: true,
         id: true,
         updatedAt: true,
+
+        users: {
+          select: {
+            id: true,
+          },
+        },
       },
     });
     if (results === null) {

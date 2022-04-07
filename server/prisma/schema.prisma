@@ -8,14 +8,15 @@ generator client {
 }
 
 model User {
-  createdAt DateTime @default(now())
-  firstName String?
-  id        String   @id @default(cuid())
-  lastName  String?
-  password  String
-  roles     String[]
-  updatedAt DateTime @updatedAt
-  username  String   @unique
+  createdAt   DateTime    @default(now())
+  firstName   String?
+  id          String      @id @default(cuid())
+  lastName    String?
+  password    String
+  roles       String[]
+  scanHistory ScanHistory
+  updatedAt   DateTime    @updatedAt
+  username    String      @unique
 }
 
 model Product {
@@ -32,4 +33,6 @@ model ScanHistory {
   id        String    @id @default(cuid())
   products  Product[]
   updatedAt DateTime  @updatedAt
+  users     User?     @relation(fields: [usersId], references: [id])
+  usersId   String?
 }

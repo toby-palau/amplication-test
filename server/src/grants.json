@@ -1,90 +1,60 @@
 [
   {
-    "role": "user",
-    "resource": "User",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "User",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "User",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "User",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "User",
-    "action": "read:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
+    "role": "adminUser",
     "resource": "Product",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "adminUser",
     "resource": "Product",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "adminUser",
     "resource": "Product",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "adminUser",
     "resource": "Product",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "palauUser",
     "resource": "Product",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
-    "resource": "ScanHistory",
-    "action": "read:own",
+    "role": "adminUser",
+    "resource": "Product",
+    "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
-    "resource": "ScanHistory",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
+    "role": "palauUser",
     "resource": "ScanHistory",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "adminUser",
     "resource": "ScanHistory",
-    "action": "delete:any",
+    "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "palauUser",
+    "resource": "ScanHistory",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "adminUser",
     "resource": "ScanHistory",
     "action": "read:any",
     "attributes": "*"

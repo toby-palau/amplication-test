@@ -4,4 +4,5 @@ export type ScanHistoryOrderByInput = {
   createdAt?: SortOrder;
   id?: SortOrder;
   updatedAt?: SortOrder;
+  usersId?: SortOrder;
 };
