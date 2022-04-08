@@ -1,0 +1,27 @@
+{
+  "name": "amplication-test",
+  "version": "1.0.0",
+  "description": "This project was generated with [Amplication](https://amplication.com)",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all -p start:admin start:backend",
+    "start:admin": "npm --prefix admin-ui start",
+    "start:backend": "npm --prefix server start",
+    "postinstall": "npm ci --prefix admin-ui && npm ci --prefix server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toby-palau/amplication-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toby-palau/amplication-test/issues"
+  },
+  "homepage": "https://github.com/toby-palau/amplication-test#readme",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5"
+  },
+  "dependencies": {}
+}
