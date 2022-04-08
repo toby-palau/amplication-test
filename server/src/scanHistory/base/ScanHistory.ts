@@ -51,12 +51,11 @@ class ScanHistory {
   updatedAt!: Date;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: () => User,
   })
   @ValidateNested()
   @Type(() => User)
-  @IsOptional()
-  users?: User | null;
+  users?: User;
 }
 export { ScanHistory };

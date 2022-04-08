@@ -137,11 +137,9 @@ export class ScanHistoryResolverBase {
       data: {
         ...args.data,
 
-        users: args.data.users
-          ? {
-              connect: args.data.users,
-            }
-          : undefined,
+        users: {
+          connect: args.data.users,
+        },
       },
     });
   }
@@ -184,11 +182,9 @@ export class ScanHistoryResolverBase {
         data: {
           ...args.data,
 
-          users: args.data.users
-            ? {
-                connect: args.data.users,
-              }
-            : undefined,
+          users: {
+            connect: args.data.users,
+          },
         },
       });
     } catch (error) {

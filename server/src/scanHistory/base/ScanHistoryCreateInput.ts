@@ -30,15 +30,12 @@ class ScanHistoryCreateInput {
   products?: ProductCreateNestedManyWithoutScanHistoriesInput;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: () => UserWhereUniqueInput,
   })
   @ValidateNested()
   @Type(() => UserWhereUniqueInput)
-  @IsOptional()
-  @Field(() => UserWhereUniqueInput, {
-    nullable: true,
-  })
-  users?: UserWhereUniqueInput | null;
+  @Field(() => UserWhereUniqueInput)
+  users!: UserWhereUniqueInput;
 }
 export { ScanHistoryCreateInput };

@@ -3,5 +3,5 @@ import { UserWhereUniqueInput } from "../user/UserWhereUniqueInput";
 
 export type ScanHistoryCreateInput = {
   products?: ProductCreateNestedManyWithoutScanHistoriesInput;
-  users?: UserWhereUniqueInput | null;
+  users: UserWhereUniqueInput;
 };

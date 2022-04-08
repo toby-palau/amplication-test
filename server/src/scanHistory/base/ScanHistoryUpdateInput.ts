@@ -39,6 +39,6 @@ class ScanHistoryUpdateInput {
   @Field(() => UserWhereUniqueInput, {
     nullable: true,
   })
-  users?: UserWhereUniqueInput | null;
+  users?: UserWhereUniqueInput;
 }
 export { ScanHistoryUpdateInput };
