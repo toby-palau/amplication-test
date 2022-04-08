@@ -6,5 +6,5 @@ export type ScanHistory = {
   id: string;
   products?: Array<Product>;
   updatedAt: Date;
-  users?: User | null;
+  users?: User;
 };

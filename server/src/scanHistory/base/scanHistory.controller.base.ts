@@ -76,11 +76,9 @@ export class ScanHistoryControllerBase {
       data: {
         ...data,
 
-        users: data.users
-          ? {
-              connect: data.users,
-            }
-          : undefined,
+        users: {
+          connect: data.users,
+        },
       },
       select: {
         createdAt: true,
@@ -229,11 +227,9 @@ export class ScanHistoryControllerBase {
         data: {
           ...data,
 
-          users: data.users
-            ? {
-                connect: data.users,
-              }
-            : undefined,
+          users: {
+            connect: data.users,
+          },
         },
         select: {
           createdAt: true,

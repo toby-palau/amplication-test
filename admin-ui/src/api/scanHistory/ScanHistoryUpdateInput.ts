@@ -3,5 +3,5 @@ import { UserWhereUniqueInput } from "../user/UserWhereUniqueInput";
 
 export type ScanHistoryUpdateInput = {
   products?: ProductUpdateManyWithoutScanHistoriesInput;
-  users?: UserWhereUniqueInput | null;
+  users?: UserWhereUniqueInput;
 };
