@@ -58,7 +58,7 @@ export class AuthService {
       data: {
         username,
         password,
-        roles: ['todoUser'], // Here we assign every new user the `Todo User` role
+        roles: ['adminUser'], // Here we assign every new user the `Todo User` role
       },
     });
     // If creating a new user fails throw an error
