@@ -14,7 +14,7 @@ model User {
   lastName    String?
   password    String
   roles       String[]
-  scanHistory ScanHistory?
+  scanHistory ScanHistory
   updatedAt   DateTime    @updatedAt
   username    String      @unique
 }
