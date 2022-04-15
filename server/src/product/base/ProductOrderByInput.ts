@@ -25,7 +25,34 @@ class ProductOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  barcode?: SortOrder;
+  code?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  compared_to_category?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  emissions?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  country?: SortOrder;
 
   @ApiProperty({
     required: false,
@@ -52,7 +79,16 @@ class ProductOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  productName?: SortOrder;
+  palmOil?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  product_name?: SortOrder;
 
   @ApiProperty({
     required: false,

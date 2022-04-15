@@ -75,10 +75,14 @@ export class ProductControllerBase {
     return await this.service.create({
       data: data,
       select: {
-        barcode: true,
+        code: true,
+        compared_to_category: true,
+        emissions: true,
+        country: true,
         createdAt: true,
         id: true,
-        productName: true,
+        palmOil: true,
+        product_name: true,
         updatedAt: true,
       },
     });
@@ -113,10 +117,14 @@ export class ProductControllerBase {
     const results = await this.service.findMany({
       ...args,
       select: {
-        barcode: true,
+        code: true,
+        compared_to_category: true,
+        emissions: true,
+        country: true,
         createdAt: true,
         id: true,
-        productName: true,
+        palmOil: true,
+        product_name: true,
         updatedAt: true,
       },
     });
@@ -150,10 +158,14 @@ export class ProductControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
-        barcode: true,
+        code: true,
+        compared_to_category: true,
+        emissions: true,
+        country: true,
         createdAt: true,
         id: true,
-        productName: true,
+        palmOil: true,
+        product_name: true,
         updatedAt: true,
       },
     });
@@ -208,10 +220,14 @@ export class ProductControllerBase {
         where: params,
         data: data,
         select: {
-          barcode: true,
+          code: true,
+          compared_to_category: true,
+          emissions: true,
+          country: true,
           createdAt: true,
           id: true,
-          productName: true,
+          palmOil: true,
+          product_name: true,
           updatedAt: true,
         },
       });
@@ -246,10 +262,14 @@ export class ProductControllerBase {
       return await this.service.delete({
         where: params,
         select: {
-          barcode: true,
+          code: true,
+          compared_to_category: true,
+          emissions: true,
+          country: true,
           createdAt: true,
           id: true,
-          productName: true,
+          palmOil: true,
+          product_name: true,
           updatedAt: true,
         },
       });

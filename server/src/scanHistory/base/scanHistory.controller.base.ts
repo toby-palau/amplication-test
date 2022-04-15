@@ -322,10 +322,14 @@ export class ScanHistoryControllerBase {
     const results = await this.service.findProducts(params.id, {
       ...query,
       select: {
-        barcode: true,
+        code: true,
+        compared_to_category: true,
+        emissions: true,
+        country: true,
         createdAt: true,
         id: true,
-        productName: true,
+        palmOil: true,
+        product_name: true,
         updatedAt: true,
       },
     });

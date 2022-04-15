@@ -14,8 +14,10 @@ import { ApiProperty } from "@nestjs/swagger";
 import { IntNullableFilter } from "../../util/IntNullableFilter";
 import { Type } from "class-transformer";
 import { IsOptional, ValidateNested } from "class-validator";
-import { StringFilter } from "../../util/StringFilter";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
+import { FloatNullableFilter } from "../../util/FloatNullableFilter";
+import { StringFilter } from "../../util/StringFilter";
+import { BooleanNullableFilter } from "../../util/BooleanNullableFilter";
 import { ScanHistoryListRelationFilter } from "../../scanHistory/base/ScanHistoryListRelationFilter";
 @InputType()
 class ProductWhereInput {
@@ -28,7 +30,40 @@ class ProductWhereInput {
   @Field(() => IntNullableFilter, {
     nullable: true,
   })
-  barcode?: IntNullableFilter;
+  code?: IntNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  compared_to_category?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: FloatNullableFilter,
+  })
+  @Type(() => FloatNullableFilter)
+  @IsOptional()
+  @Field(() => FloatNullableFilter, {
+    nullable: true,
+  })
+  emissions?: FloatNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  country?: StringNullableFilter;
 
   @ApiProperty({
     required: false,
@@ -43,14 +78,25 @@ class ProductWhereInput {
 
   @ApiProperty({
     required: false,
-    type: StringNullableFilter,
+    type: BooleanNullableFilter,
   })
-  @Type(() => StringNullableFilter)
+  @Type(() => BooleanNullableFilter)
   @IsOptional()
-  @Field(() => StringNullableFilter, {
+  @Field(() => BooleanNullableFilter, {
     nullable: true,
   })
-  productName?: StringNullableFilter;
+  palmOil?: BooleanNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringFilter,
+  })
+  @Type(() => StringFilter)
+  @IsOptional()
+  @Field(() => StringFilter, {
+    nullable: true,
+  })
+  product_name?: StringFilter;
 
   @ApiProperty({
     required: false,
