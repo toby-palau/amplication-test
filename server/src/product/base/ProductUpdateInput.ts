@@ -11,7 +11,14 @@ https://docs.amplication.com/docs/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsInt, IsOptional, IsString, ValidateNested } from "class-validator";
+import {
+  IsInt,
+  IsOptional,
+  IsString,
+  IsNumber,
+  IsBoolean,
+  ValidateNested,
+} from "class-validator";
 import { ScanHistoryUpdateManyWithoutProductsInput } from "./ScanHistoryUpdateManyWithoutProductsInput";
 import { Type } from "class-transformer";
 @InputType()
@@ -25,7 +32,7 @@ class ProductUpdateInput {
   @Field(() => Number, {
     nullable: true,
   })
-  barcode?: number | null;
+  code?: number | null;
 
   @ApiProperty({
     required: false,
@@ -36,7 +43,51 @@ class ProductUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  productName?: string | null;
+  compared_to_category?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  emissions?: number | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  country?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: Boolean,
+  })
+  @IsBoolean()
+  @IsOptional()
+  @Field(() => Boolean, {
+    nullable: true,
+  })
+  palmOil?: boolean | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  product_name?: string;
 
   @ApiProperty({
     required: false,

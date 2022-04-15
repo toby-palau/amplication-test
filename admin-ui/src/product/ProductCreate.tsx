@@ -6,6 +6,7 @@ import {
   CreateProps,
   NumberInput,
   TextInput,
+  BooleanInput,
   ReferenceArrayInput,
   SelectArrayInput,
 } from "react-admin";
@@ -16,8 +17,12 @@ export const ProductCreate = (props: CreateProps): React.ReactElement => {
   return (
     <Create {...props}>
       <SimpleForm>
-        <NumberInput step={1} label="Barcode" source="barcode" />
-        <TextInput label="Product Name" source="productName" />
+        <NumberInput step={1} label="Barcode" source="code" />
+        <TextInput label="Category" source="compared_to_category" />
+        <NumberInput label="CO2 Emission" source="emissions" />
+        <TextInput label="Country" source="country" />
+        <BooleanInput label="Palm Oil" source="palmOil" />
+        <TextInput label="Product Name" source="product_name" />
         <ReferenceArrayInput
           source="scanHistory"
           reference="ScanHistory"

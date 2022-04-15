@@ -14,18 +14,22 @@ model User {
   lastName    String?
   password    String
   roles       String[]
-  scanHistory ScanHistory?
+  scanHistory ScanHistory
   updatedAt   DateTime    @updatedAt
   username    String      @unique
 }
 
 model Product {
-  barcode     Int?
-  createdAt   DateTime      @default(now())
-  id          String        @id @default(cuid())
-  productName String?
-  scanHistory ScanHistory[]
-  updatedAt   DateTime      @updatedAt
+  code                 Int?
+  compared_to_category String?
+  emissions            Float?
+  country              String?
+  createdAt            DateTime      @default(now())
+  id                   String        @id @default(cuid())
+  palmOil              Boolean?
+  product_name         String
+  scanHistory          ScanHistory[]
+  updatedAt            DateTime      @updatedAt
 }
 
 model ScanHistory {

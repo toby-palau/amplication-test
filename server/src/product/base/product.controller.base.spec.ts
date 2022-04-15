@@ -11,33 +11,49 @@ import { ProductService } from "../product.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
-  barcode: 42,
+  code: 42,
+  compared_to_category: "exampleComparedToCategory",
+  emissions: 42.42,
+  country: "exampleCountry",
   createdAt: new Date(),
   id: "exampleId",
-  productName: "exampleProductName",
+  palmOil: "true",
+  product_name: "exampleProductName",
   updatedAt: new Date(),
 };
 const CREATE_RESULT = {
-  barcode: 42,
+  code: 42,
+  compared_to_category: "exampleComparedToCategory",
+  emissions: 42.42,
+  country: "exampleCountry",
   createdAt: new Date(),
   id: "exampleId",
-  productName: "exampleProductName",
+  palmOil: "true",
+  product_name: "exampleProductName",
   updatedAt: new Date(),
 };
 const FIND_MANY_RESULT = [
   {
-    barcode: 42,
+    code: 42,
+    compared_to_category: "exampleComparedToCategory",
+    emissions: 42.42,
+    country: "exampleCountry",
     createdAt: new Date(),
     id: "exampleId",
-    productName: "exampleProductName",
+    palmOil: "true",
+    product_name: "exampleProductName",
     updatedAt: new Date(),
   },
 ];
 const FIND_ONE_RESULT = {
-  barcode: 42,
+  code: 42,
+  compared_to_category: "exampleComparedToCategory",
+  emissions: 42.42,
+  country: "exampleCountry",
   createdAt: new Date(),
   id: "exampleId",
-  productName: "exampleProductName",
+  palmOil: "true",
+  product_name: "exampleProductName",
   updatedAt: new Date(),
 };
 

@@ -18,7 +18,7 @@ import { UserWhereUniqueInput } from "../../user/base/UserWhereUniqueInput";
 @InputType()
 class ScanHistoryCreateInput {
   @ApiProperty({
-    required: false,
+    required: true,
     type: () => ProductCreateNestedManyWithoutScanHistoriesInput,
   })
   @ValidateNested()
