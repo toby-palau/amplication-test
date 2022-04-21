@@ -10,11 +10,13 @@
     "seed": "ts-node scripts/seed.ts",
     "db:migrate-save": "prisma migrate dev",
     "db:migrate-up": "prisma migrate deploy",
+    "prisma:deploy": "prisma deploy",
     "db:clean": "ts-node scripts/clean.ts",
     "db:init": "run-s \"db:migrate-save -- --name 'initial version'\" db:migrate-up seed",
     "prisma:generate": "prisma generate",
     "docker:db": "docker-compose -f docker-compose.db.yml up -d",
-    "docker:build": "docker build ."
+    "docker:build": "docker build .",
+    "prisma:studio": "prisma studio"
   },
   "dependencies": {
     "@nestjs/common": "8.2.3",
@@ -26,7 +28,7 @@
     "@nestjs/platform-express": "8.2.3",
     "@nestjs/serve-static": "2.2.2",
     "@nestjs/swagger": "5.1.5",
-    "@prisma/client": "3.6.0",
+    "@prisma/client": "^3.12.0",
     "apollo-server-express": "3.5.0",
     "bcrypt": "5.0.1",
     "class-transformer": "0.5.1",
@@ -57,7 +59,7 @@
     "@types/supertest": "2.0.11",
     "jest": "27.0.6",
     "jest-mock-extended": "^2.0.4",
-    "prisma": "3.6.0",
+    "prisma": "^3.12.0",
     "supertest": "4.0.2",
     "ts-jest": "27.0.3",
     "type-fest": "0.11.0",

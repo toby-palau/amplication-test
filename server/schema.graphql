@@ -2,6 +2,11 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+input BooleanNullableFilter {
+  equals: Boolean
+  not: Boolean
+}
+
 input Credentials {
   password: String!
   username: String!
@@ -11,6 +16,17 @@ input Credentials {
 A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
 """
 scalar DateTime
+
+input FloatNullableFilter {
+  equals: Float
+  gt: Float
+  gte: Float
+  in: [Float!]
+  lt: Float
+  lte: Float
+  not: Float
+  notIn: [Float!]
+}
 
 input IntNullableFilter {
   equals: Int
@@ -42,17 +58,25 @@ type Mutation {
 }
 
 type Product {
-  barcode: Float
+  code: Float
+  compared_to_category: String
+  country: String
   createdAt: DateTime!
+  emissions: Float
   id: String!
-  productName: String
+  palmOil: Boolean
+  product_name: String!
   scanHistory(orderBy: [ScanHistoryOrderByInput!], skip: Float, take: Float, where: ScanHistoryWhereInput): [ScanHistory!]!
   updatedAt: DateTime!
 }
 
 input ProductCreateInput {
-  barcode: Float
-  productName: String
+  code: Float
+  compared_to_category: String
+  country: String
+  emissions: Float
+  palmOil: Boolean
+  product_name: String!
   scanHistory: ScanHistoryCreateNestedManyWithoutProductsInput
 }
 
@@ -67,16 +91,24 @@ input ProductListRelationFilter {
 }
 
 input ProductOrderByInput {
-  barcode: SortOrder
+  code: SortOrder
+  compared_to_category: SortOrder
+  country: SortOrder
   createdAt: SortOrder
+  emissions: SortOrder
   id: SortOrder
-  productName: SortOrder
+  palmOil: SortOrder
+  product_name: SortOrder
   updatedAt: SortOrder
 }
 
 input ProductUpdateInput {
-  barcode: Float
-  productName: String
+  code: Float
+  compared_to_category: String
+  country: String
+  emissions: Float
+  palmOil: Boolean
+  product_name: String
   scanHistory: ScanHistoryUpdateManyWithoutProductsInput
 }
 
@@ -87,9 +119,13 @@ input ProductUpdateManyWithoutScanHistoriesInput {
 }
 
 input ProductWhereInput {
-  barcode: IntNullableFilter
+  code: IntNullableFilter
+  compared_to_category: StringNullableFilter
+  country: StringNullableFilter
+  emissions: FloatNullableFilter
   id: StringFilter
-  productName: StringNullableFilter
+  palmOil: BooleanNullableFilter
+  product_name: StringFilter
   scanHistory: ScanHistoryListRelationFilter
 }
 
