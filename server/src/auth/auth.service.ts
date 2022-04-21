@@ -44,4 +44,52 @@ export class AuthService {
       ...user,
     };
   }
+  
+  async signup(credentials: Credentials): Promise<UserInfo> {
+    // Extract the username and password from the body of the request
+    const { username, password } = credentials;
+    // Here we attempt to create a new user
+    const user = await this.userService.create({
+      data: {
+        username,
+        password,
+        roles: ['adminUser'], // Here we assign every new user the `Todo User` role
+      },
+    });
+    // If creating a new user fails throw an error
+    if (!user) {
+     throw new UnauthorizedException("Could not create user");
+    }
+    // Create an access token for the newly created user
+    //@ts-ignore
+    const accessToken = await this.tokenService.createToken(username, password);
+    // Return the access token as well as the some details about the user
+    return {
+      accessToken,
+      username: user.username,
+      roles: user.roles,
+    };
+  }
+
+  async me(authorization: string = ""): Promise<User> {
+    const bearer = authorization.replace(/^Bearer\s/, "");
+    const username = this.tokenService.decodeToken(bearer);
+    const result = await this.userService.findOne({
+      where: { username },
+      select: {
+        createdAt: true,
+        firstName: true,
+        id: true,
+        lastName: true,
+        roles: true,
+        updatedAt: true,
+        username: true,
+      },
+    });
+    if (!result) {
+      throw new NotFoundException(`No resource was found for ${username}`);
+    }
+  
+    return result;
+  }
 }
