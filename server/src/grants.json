@@ -1,6 +1,36 @@
 [
   {
     "role": "adminUser",
+    "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "adminUser",
+    "resource": "User",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "adminUser",
+    "resource": "User",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "adminUser",
+    "resource": "User",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "adminUser",
+    "resource": "User",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "adminUser",
     "resource": "Product",
     "action": "read:own",
     "attributes": "*"
@@ -36,6 +66,18 @@
     "attributes": "*"
   },
   {
+    "role": "adminUser",
+    "resource": "ScanHistory",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "adminUser",
+    "resource": "ScanHistory",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
     "role": "palauUser",
     "resource": "ScanHistory",
     "action": "update:any",
@@ -45,6 +87,12 @@
     "role": "adminUser",
     "resource": "ScanHistory",
     "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "adminUser",
+    "resource": "ScanHistory",
+    "action": "delete:any",
     "attributes": "*"
   },
   {
