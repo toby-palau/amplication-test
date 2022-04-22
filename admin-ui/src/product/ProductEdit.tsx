@@ -4,8 +4,8 @@ import {
   Edit,
   SimpleForm,
   EditProps,
-  NumberInput,
   TextInput,
+  NumberInput,
   BooleanInput,
   ReferenceArrayInput,
   SelectArrayInput,
@@ -17,7 +17,7 @@ export const ProductEdit = (props: EditProps): React.ReactElement => {
   return (
     <Edit {...props}>
       <SimpleForm>
-        <NumberInput step={1} label="Barcode" source="code" />
+        <TextInput label="Barcode" source="code" />
         <TextInput label="Category" source="compared_to_category" />
         <NumberInput label="CO2 Emission" source="emissions" />
         <TextInput label="Countries" source="countries" />

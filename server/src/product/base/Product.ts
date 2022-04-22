@@ -12,9 +12,8 @@ https://docs.amplication.com/docs/how-to/custom-code
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import {
-  IsInt,
-  IsOptional,
   IsString,
+  IsOptional,
   IsNumber,
   IsDate,
   IsBoolean,
@@ -26,14 +25,14 @@ import { ScanHistory } from "../../scanHistory/base/ScanHistory";
 class Product {
   @ApiProperty({
     required: false,
-    type: Number,
+    type: String,
   })
-  @IsInt()
+  @IsString()
   @IsOptional()
-  @Field(() => Number, {
+  @Field(() => String, {
     nullable: true,
   })
-  code!: number | null;
+  code!: string | null;
 
   @ApiProperty({
     required: false,

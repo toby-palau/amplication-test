@@ -4,8 +4,8 @@ import {
   Create,
   SimpleForm,
   CreateProps,
-  NumberInput,
   TextInput,
+  NumberInput,
   BooleanInput,
   ReferenceArrayInput,
   SelectArrayInput,
@@ -17,7 +17,7 @@ export const ProductCreate = (props: CreateProps): React.ReactElement => {
   return (
     <Create {...props}>
       <SimpleForm>
-        <NumberInput step={1} label="Barcode" source="code" />
+        <TextInput label="Barcode" source="code" />
         <TextInput label="Category" source="compared_to_category" />
         <NumberInput label="CO2 Emission" source="emissions" />
         <TextInput label="Countries" source="countries" />

@@ -11,7 +11,7 @@ import { ProductService } from "../product.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
-  code: 42,
+  code: "exampleCode",
   compared_to_category: "exampleComparedToCategory",
   emissions: 42.42,
   countries: "exampleCountries",
@@ -22,7 +22,7 @@ const CREATE_INPUT = {
   updatedAt: new Date(),
 };
 const CREATE_RESULT = {
-  code: 42,
+  code: "exampleCode",
   compared_to_category: "exampleComparedToCategory",
   emissions: 42.42,
   countries: "exampleCountries",
@@ -34,7 +34,7 @@ const CREATE_RESULT = {
 };
 const FIND_MANY_RESULT = [
   {
-    code: 42,
+    code: "exampleCode",
     compared_to_category: "exampleComparedToCategory",
     emissions: 42.42,
     countries: "exampleCountries",
@@ -46,7 +46,7 @@ const FIND_MANY_RESULT = [
   },
 ];
 const FIND_ONE_RESULT = {
-  code: 42,
+  code: "exampleCode",
   compared_to_category: "exampleComparedToCategory",
   emissions: 42.42,
   countries: "exampleCountries",

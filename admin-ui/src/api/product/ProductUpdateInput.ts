@@ -1,7 +1,7 @@
 import { ScanHistoryUpdateManyWithoutProductsInput } from "./ScanHistoryUpdateManyWithoutProductsInput";
 
 export type ProductUpdateInput = {
-  code?: number | null;
+  code?: string | null;
   compared_to_category?: string | null;
   emissions?: number | null;
   countries?: string | null;

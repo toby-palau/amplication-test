@@ -1,7 +1,7 @@
 import { ScanHistory } from "../scanHistory/ScanHistory";
 
 export type Product = {
-  code: number | null;
+  code: string | null;
   compared_to_category: string | null;
   emissions: number | null;
   countries: string | null;

@@ -1,4 +1,3 @@
-import { IntNullableFilter } from "../../util/IntNullableFilter";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { FloatNullableFilter } from "../../util/FloatNullableFilter";
 import { StringFilter } from "../../util/StringFilter";
@@ -6,7 +5,7 @@ import { BooleanNullableFilter } from "../../util/BooleanNullableFilter";
 import { ScanHistoryListRelationFilter } from "../scanHistory/ScanHistoryListRelationFilter";
 
 export type ProductWhereInput = {
-  code?: IntNullableFilter;
+  code?: StringNullableFilter;
   compared_to_category?: StringNullableFilter;
   emissions?: FloatNullableFilter;
   countries?: StringNullableFilter;

@@ -1,7 +1,7 @@
 import { ScanHistoryCreateNestedManyWithoutProductsInput } from "./ScanHistoryCreateNestedManyWithoutProductsInput";
 
 export type ProductCreateInput = {
-  code?: number | null;
+  code?: string | null;
   compared_to_category?: string | null;
   emissions?: number | null;
   countries?: string | null;

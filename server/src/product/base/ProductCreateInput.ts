@@ -12,9 +12,8 @@ https://docs.amplication.com/docs/how-to/custom-code
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import {
-  IsInt,
-  IsOptional,
   IsString,
+  IsOptional,
   IsNumber,
   IsBoolean,
   ValidateNested,
@@ -25,14 +24,14 @@ import { Type } from "class-transformer";
 class ProductCreateInput {
   @ApiProperty({
     required: false,
-    type: Number,
+    type: String,
   })
-  @IsInt()
+  @IsString()
   @IsOptional()
-  @Field(() => Number, {
+  @Field(() => String, {
     nullable: true,
   })
-  code?: number | null;
+  code?: string | null;
 
   @ApiProperty({
     required: false,
