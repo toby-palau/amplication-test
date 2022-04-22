@@ -4,7 +4,7 @@ export type Product = {
   code: number | null;
   compared_to_category: string | null;
   emissions: number | null;
-  country: string | null;
+  countries: string | null;
   createdAt: Date;
   id: string;
   palmOil: boolean | null;

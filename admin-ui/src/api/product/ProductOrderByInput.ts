@@ -4,7 +4,7 @@ export type ProductOrderByInput = {
   code?: SortOrder;
   compared_to_category?: SortOrder;
   emissions?: SortOrder;
-  country?: SortOrder;
+  countries?: SortOrder;
   createdAt?: SortOrder;
   id?: SortOrder;
   palmOil?: SortOrder;

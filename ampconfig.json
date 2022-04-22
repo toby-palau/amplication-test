@@ -3,15 +3,15 @@
   "appInfo": {
     "name": "Palau App",
     "description": "",
-    "version": "avt19zvk",
+    "version": "mdns18s3",
     "id": "cl1nc4131155031601s6ka244csv",
     "url": "https://app.amplication.com/cl1nc4131155031601s6ka244csv",
     "settings": {
       "dbHost": "localhost",
-      "dbName": "AmplicationDB",
-      "dbPassword": "admin",
-      "dbPort": 12027,
-      "dbUser": "admin",
+      "dbName": "postgres",
+      "dbPassword": "postgres",
+      "dbPort": 5432,
+      "dbUser": "postgres",
       "appId": "cl1nc4131155031601s6ka244csv",
       "authProvider": "Jwt"
     }
