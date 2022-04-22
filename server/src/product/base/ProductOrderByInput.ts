@@ -52,7 +52,7 @@ class ProductOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  country?: SortOrder;
+  countries?: SortOrder;
 
   @ApiProperty({
     required: false,

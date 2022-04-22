@@ -20,7 +20,7 @@ export const ProductEdit = (props: EditProps): React.ReactElement => {
         <NumberInput step={1} label="Barcode" source="code" />
         <TextInput label="Category" source="compared_to_category" />
         <NumberInput label="CO2 Emission" source="emissions" />
-        <TextInput label="Country" source="country" />
+        <TextInput label="Countries" source="countries" />
         <BooleanInput label="Palm Oil" source="palmOil" />
         <TextInput label="Product Name" source="product_name" />
         <ReferenceArrayInput
