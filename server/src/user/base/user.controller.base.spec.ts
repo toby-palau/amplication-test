@@ -73,7 +73,7 @@ const basicAuthGuard = {
     const argumentHost = context.switchToHttp();
     const request = argumentHost.getRequest();
     request.user = {
-      roles:  ["adminUser", "palauUser"],
+      roles:  ["adminUser"],
     };
     return true;
   },
@@ -109,9 +109,24 @@ describe("User", () => {
     await app.init();
   });
 
+  test("GET /me", async () => {
+    await request(app.getHttpServer())
+      .post("/users")
+      .auth("admin", "admin")
+      .send(CREATE_INPUT)
+      .expect(HttpStatus.CREATED)
+      .expect({
+        ...CREATE_RESULT,
+        createdAt: CREATE_RESULT.createdAt.toISOString(),
+        updatedAt: CREATE_RESULT.updatedAt.toISOString(),
+      })
+      .then(console.log);
+  });
+
   test("POST /users", async () => {
     await request(app.getHttpServer())
       .post("/users")
+      .auth("admin", "admin")
       .send(CREATE_INPUT)
       .expect(HttpStatus.CREATED)
       .expect({

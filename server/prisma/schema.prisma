@@ -31,10 +31,10 @@ model ScanHistory {
 
 model Product {
   id                   String        @id @default(auto()) @map("_id") @db.ObjectId
-  code                 Int?
+  code                 String?
   compared_to_category String?
   emissions            Float?
-  country              String?
+  countries            String?
   createdAt            DateTime      @default(now())
   palmOil              Boolean?
   product_name         String

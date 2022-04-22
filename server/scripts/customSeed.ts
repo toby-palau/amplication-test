@@ -2,15 +2,18 @@ import { PrismaClient } from "@prisma/client";
 
 export async function customSeed() {
   const client = new PrismaClient();
-  const username = "admin";
 
   //replace this sample code to populate your database
   //with data that is required for your application to start
-  await client.user.update({
-    where: { username: username },
+  await client.product.create({
     data: {
-      username,
-    },
+      code: "40897677",
+      compared_to_category: "en:rolled-oats",
+      emissions: 0.0,
+      countries: "France,Allemagne,Pays-Bas,Portugal,Suisse",
+      palmOil: false,
+      product_name: "Bio havermout fijn",
+    }
   });
 
   client.$disconnect();
