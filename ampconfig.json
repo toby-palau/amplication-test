@@ -8,10 +8,10 @@
     "url": "https://app.amplication.com/cl1nc4131155031601s6ka244csv",
     "settings": {
       "dbHost": "localhost",
-      "dbName": "postgres",
-      "dbPassword": "postgres",
-      "dbPort": 5432,
-      "dbUser": "postgres",
+      "dbName": "AmplicationDB",
+      "dbPassword": "admin",
+      "dbPort": 12027,
+      "dbUser": "admin",
       "appId": "cl1nc4131155031601s6ka244csv",
       "authProvider": "Jwt"
     }
