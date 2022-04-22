@@ -9,7 +9,7 @@ export type ProductWhereInput = {
   code?: IntNullableFilter;
   compared_to_category?: StringNullableFilter;
   emissions?: FloatNullableFilter;
-  country?: StringNullableFilter;
+  countries?: StringNullableFilter;
   id?: StringFilter;
   palmOil?: BooleanNullableFilter;
   product_name?: StringFilter;

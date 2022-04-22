@@ -106,3 +106,8 @@ dist
 .tern-port
 
 ampconfig.json
+
+server/prisma/schema.backup.prisma
+server/src/health/base/health.service.base.ts
+server/src/tests/health/health.service.spec.ts
+server/docker-compose.db.yml
