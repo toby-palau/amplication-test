@@ -6,6 +6,7 @@ import { Credentials } from "./Credentials";
 import { UserInfo } from "./UserInfo";
 import { User } from "../user/base/User";
 
+
 @ApiTags("auth")
 @Controller()
 export class AuthController {
@@ -25,6 +26,6 @@ export class AuthController {
   @ApiOkResponse({ type: User })
   @Get("me")
   async me(@Req() request: Request): Promise<User> {
-  return this.authService.me(request.headers.authorization);
+    return this.authService.me(request.headers.authorization);
   }
 }

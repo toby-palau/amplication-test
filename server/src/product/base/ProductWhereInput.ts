@@ -63,7 +63,7 @@ class ProductWhereInput {
   @Field(() => StringNullableFilter, {
     nullable: true,
   })
-  country?: StringNullableFilter;
+  countries?: StringNullableFilter;
 
   @ApiProperty({
     required: false,

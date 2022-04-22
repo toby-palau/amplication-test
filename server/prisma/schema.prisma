@@ -4,7 +4,7 @@ datasource db {
 }
 
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 model User {
@@ -19,16 +19,6 @@ model User {
   username    String      @unique
 }
 
-model ScanHistory {
-  id          String    @id @default(auto()) @map("_id") @db.ObjectId
-  createdAt   DateTime  @default(now())
-  productIds  String[]  @db.ObjectId
-  products    Product[] @relation(fields: [productIds], references: [id])
-  updatedAt   DateTime  @updatedAt
-  users       User      @relation(fields: [usersId], references: [id])
-  usersId     String
-}
-
 model Product {
   id                   String        @id @default(auto()) @map("_id") @db.ObjectId
   code                 String?
@@ -41,4 +31,14 @@ model Product {
   scanHistoryIds       String[]      @db.ObjectId
   scanHistory          ScanHistory[] @relation(fields: [scanHistoryIds], references: [id])
   updatedAt            DateTime      @updatedAt
+}
+
+model ScanHistory {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt   DateTime  @default(now())
+  productIds  String[]  @db.ObjectId
+  products    Product[] @relation(fields: [productIds], references: [id])
+  updatedAt   DateTime  @updatedAt
+  users       User      @relation(fields: [usersId], references: [id])
+  usersId     String
 }

@@ -325,7 +325,7 @@ export class ScanHistoryControllerBase {
         code: true,
         compared_to_category: true,
         emissions: true,
-        country: true,
+        countries: true,
         createdAt: true,
         id: true,
         palmOil: true,

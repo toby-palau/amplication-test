@@ -126,7 +126,6 @@ describe("User", () => {
   test("POST /users", async () => {
     await request(app.getHttpServer())
       .post("/users")
-      .auth("admin", "admin")
       .send(CREATE_INPUT)
       .expect(HttpStatus.CREATED)
       .expect({

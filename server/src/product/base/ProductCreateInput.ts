@@ -65,7 +65,7 @@ class ProductCreateInput {
   @Field(() => String, {
     nullable: true,
   })
-  country?: string | null;
+  countries?: string | null;
 
   @ApiProperty({
     required: false,

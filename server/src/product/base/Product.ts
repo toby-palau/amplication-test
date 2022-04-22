@@ -66,7 +66,7 @@ class Product {
   @Field(() => String, {
     nullable: true,
   })
-  country!: string | null;
+  countries!: string | null;
 
   @ApiProperty({
     required: true,

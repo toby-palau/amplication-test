@@ -53,7 +53,7 @@ const basicAuthGuard = {
     const argumentHost = context.switchToHttp();
     const request = argumentHost.getRequest();
     request.user = {
-      roles: ["adminUser", "palauUser"],
+      roles: ["adminUser"],
     };
     return true;
   },
